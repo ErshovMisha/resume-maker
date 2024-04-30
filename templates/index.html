@@ -14,7 +14,7 @@
 <h1 style="color: #5DFFEC">Заповніть дані</h1>
 <form method="post">
     {% csrf_token %}
-    {{ form.as_p }}
+    {{ form }}
     <button type="submit">Відправити</button>
 </form>
 </body>
