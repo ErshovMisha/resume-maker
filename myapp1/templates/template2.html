@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Template</title>
+    <style>
+        /* Додайте CSS стилі для вашого шаблону */
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Title</h1>
+        <p>This is the textual content of your PDF.</p>
+        <p>You can add other elements such as lists, tables, images, and more.</p>
+    </div>
+    <form method="post">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">Відправити</button>
+    </form>
+</body>
+</html>

@@ -10,7 +10,7 @@
             font-family: Arial, sans-serif;
         }
         .container {
-            max-width: 800px;
+            max-width: 700px;
             margin: 0 auto;
             padding: 20px;
         }
@@ -29,9 +29,9 @@
         <p>You can add other elements such as lists, tables, images, and more.</p>
     </div>
     <form method="post">
-    {% csrf_token %}
-    {{ form }}
-    <button type="submit">Відправити</button>
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">Відправити</button>
     </form>
 </body>
 </html>
