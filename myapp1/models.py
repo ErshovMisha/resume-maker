@@ -1,6 +1,7 @@
 from django.db import models
 
 class Res_Input(models.Model):
+    user_id = models.ForeignKey
     name = models.TextField()
     second_name = models.TextField()
     data = models.TextField()

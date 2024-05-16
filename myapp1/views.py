@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.shortcuts import render, redirect
 from .forms import TextInputForm
+from .forms import ExampleForm
 from django.http import HttpResponse
 from django.template.loader import get_template
 from xhtml2pdf import pisa
@@ -17,9 +18,9 @@ def index_page(request):
 
 
 def login_view(request):
-    if request.method == 'POST':
-        return redirect('http://127.0.0.1:8000/myapp1')
-    return render(request, 'login.html')
+    form = ExampleForm()
+    return render(request, 'login.html', {'form': form})
+
 
 def generate_pdf(request):
     if request.method == 'POST':
@@ -37,5 +38,3 @@ def generate_pdf(request):
         return response
     return render(request, 'template1.html')
 
-def show_files(request):
-    return render(request, 'show_files.html')

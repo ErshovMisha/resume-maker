@@ -6,11 +6,11 @@
     <title>Login</title>
 </head>
 <body>
+    <h2>Log In</h2>
     <form method="post">
         {% csrf_token %}
-        <label for="username">Username:</label><br>
-        <input type="text" id="username" name="username"><br>
-        <input type="submit" value="Login">
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
     </form>
 
 </body>
