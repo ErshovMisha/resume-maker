@@ -71,17 +71,23 @@ def register(request):
 
         if password == password1:
             if User.objects.filter(email=email1).exists():
-                messages.info(request,'Emailal ready exists')
+                messages.info(request, 'Email already exists')
                 return redirect('register')
             elif User.objects.filter(username=username1).exists():
-                messages.info(request,'Username already exists')
+                messages.info(request, 'Username already exists')
                 return redirect('register')
             else:
+                # Створюємо користувача
                 user = User.objects.create_user(username=username1, email=email1, password=password)
-                user.save();
+                user.save()
+
+                # Створюємо резюме, але тепер явно прив'язуємо користувача
+                resume = Res_Input(user=user)  # додай потрібні поля для Res_Input, якщо потрібно
+                resume.save()
+
                 return redirect('login')
         else:
-            messages.info(request,'Password not the same')
+            messages.info(request, 'Password not the same')
             return redirect('register')
     else:
         return render(request, 'register.html')
